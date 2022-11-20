@@ -1,0 +1,61 @@
+{
+  "name": "scaffolding-node",
+  "private": true,
+  "version": "1.0.0",
+  "description": "scaffolding project for NodeJs web server",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "nodemon -r dotenv/config src/app.ts",
+    "build": "yarn clean && node-git-info && yarn generate-route-and-spec && tsc",
+    "clean": "rm -rf build",
+    "test": "jest",
+    "pre-commit": "lint-staged",
+    "pre-push": "yarn test",
+    "prepare": "husky install",
+    "generate-route-and-spec": "tsoa spec-and-routes && prettier --write src/api-spec/swagger.json src/route/routes.ts"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "eslint --fix"
+    ],
+    "*.{ts,tsx,js,json,html,yml,css,md}": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "date-fns": "^2.29.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-actuator": "^1.8.2",
+    "pino": "^8.7.0",
+    "swagger-ui-express": "^4.6.0",
+    "tsoa": "^4.1.3"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.3.18",
+    "@swc/jest": "^0.2.23",
+    "@types/body-parser": "^1.19.2",
+    "@types/express": "^4.17.14",
+    "@types/express-actuator": "^1.8.0",
+    "@types/jest": "^29.2.3",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.11.9",
+    "@types/supertest": "^2.0.12",
+    "@types/swagger-ui-express": "^4.1.3",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "eslint": "^8.27.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "husky": "^8.0.2",
+    "jest": "^29.3.1",
+    "lint-staged": "^13.0.3",
+    "node-git-info": "^1.1.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
+    "supertest": "^6.3.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+build/
+coverage/
+.idea/
+git.properties
+.DS_Store
+.env

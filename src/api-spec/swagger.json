@@ -1,0 +1,94 @@
+{
+  "components": {
+    "examples": {},
+    "headers": {},
+    "parameters": {},
+    "requestBodies": {},
+    "responses": {},
+    "schemas": {
+      "HelloResponse": {
+        "properties": {
+          "hiBack": {
+            "type": "string"
+          }
+        },
+        "required": ["hiBack"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "HelloRequest": {
+        "properties": {
+          "hi": {
+            "type": "string"
+          }
+        },
+        "required": ["hi"],
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {}
+  },
+  "info": {
+    "title": "scaffolding-node",
+    "version": "1.0.0",
+    "description": "scaffolding project for NodeJs web server",
+    "contact": {}
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/v1/greeting/hi": {
+      "get": {
+        "operationId": "Hi",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/v1/greeting/hello": {
+      "post": {
+        "operationId": "Hello",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelloResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HelloRequest"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/api"
+    }
+  ]
+}
