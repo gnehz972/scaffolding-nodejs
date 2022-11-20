@@ -1,7 +1,7 @@
 ## Overview
 
-This is a scaffolding project for NodeJs web application, written in typescript. It uses `express` as the core framework, use `tsoa` to generate routes based on annotations in the controllers, and models with types inferred from typescript.
-The controller part is quite alike `springboot` or `NestJs`, it's the single source of truth for the API.
+This is a scaffolding project for NodeJs web application, written in typescript. It uses `express` as the core framework, use `tsoa` to generate routes based on decorators in the controllers, and models with types inferred from typescript.
+The controller part is quite alike `SpringBoot` or `NestJs`, it's the single source of truth for the API.
 
 ## Environment
 
