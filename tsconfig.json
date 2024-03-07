@@ -10,7 +10,8 @@
     "emitDecoratorMetadata": true,
     "baseUrl": "./",
     "rootDir": "src",
+    "skipLibCheck": true,
     "moduleResolution": "node"
   },
-  "exclude": ["node_modules", "src/**/__tests__/**", "jest.config.ts"]
+  "exclude": ["node_modules", "src/**/__tests__/**", "jest.config.ts", "migrations"]
 }
